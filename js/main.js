@@ -21,12 +21,14 @@ lighboxOverlay.addEventListener("click", (e) => {
     }
 })
 document.addEventListener("keydown", (e) => {
+    e.preventDefault()
     if (e.code === "Escape") {
         closeModal()
   }
 })
 
 function imageChooser(e) {
+    e.preventDefault()
     if (e.target !== gallery) {
         let clickedImg = e.target;
         modalImg.src = clickedImg.src;
@@ -36,5 +38,6 @@ function imageChooser(e) {
 }
 
 function closeModal(e) {
+    
     document.body.classList.remove("show-modal");
 }
